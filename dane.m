@@ -6,8 +6,8 @@ L2=0.37;
 L3=-0.19;
 L4=-0.2;
 Tp=1;
-%ul = 1;
-syms ul s 
+ul = -0.1;
+syms z  
 A = [ 1- Tp*(T1+T2)/(T1*T2) Tp;
     -Tp/(T1*T2) 1
     ]
@@ -17,8 +17,8 @@ B = [0;
 C = [1 0];
 D = 0;
 I = eye(2)
-G = C*(s*I - A)^(-1)*B+D
-%{
+G = C*(z*I - A)^(-1)*B+D
+
 stairs(out.y_d.time, out.y_d.signals.values);
 xlabel("Czas");
 ylabel("Wartość sygnału");
